@@ -1,0 +1,102 @@
+body {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  color: #939aa9;
+  font-family: "Heebo", sans-serif;
+  font-weight: 300;
+  background: linear-gradient(
+    rgba(254, 243, 255, 1) 34%,
+    rgba(231, 253, 255, 1) 67%
+  );
+}
+.today {
+  display: inline-block;
+  font-size: 14px;
+  color: #fff;
+  text-align: right;
+  margin: 0 0 0 400px;
+
+}
+.weather-app-header {
+  margin: 30px 450px 0;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 7px 7px 0 0;
+  font-size: 12px;
+  padding: 6px;
+  text-align: left;
+}
+.fa-circle {
+  color: #939aa9;
+  padding: 1px 2px;
+}
+.weather-app {
+  display: block;
+  margin: 0 450px;
+  padding: 50px 70px 70px 70px;
+  border: 1px solid #ececec;
+  background-color: white;
+  border-radius: 0 0 7px 7px;
+  color: #939aa9;
+}
+.material-symbols-outlined {
+  color: black;
+}
+.form-control {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid #b6bbc5;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+input[type=submit] {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 0px;
+  margin: -10;
+}
+input[type=button] {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 0px;
+  margin: -10px;
+  font-size:20px;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+input[type=button]:hover {
+border: 1px;
+background-color: #ddd;
+}
+.weather-statement {
+  margin: 0 0 30px;
+}
+.weather-description-statement,
+.weather-city-statement{
+  color: black;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.main-degree {
+  color: black;
+  font-size: 85px;
+  margin: 0 25px 0 25px;
+}
+.weather-measurements {
+  font-size: 25px;
+  font-weight: bold;
+  color: #5a6275;
+}
+.weather-units {
+  font-size: 15px;
+  color: #939aa9;
+}
+.weather-forecast-temperature {
+  font-weight: bold;
+  color: #5a6275;
+}
+a, a:visited {
+  text-decoration: none;
+  color: #939AA9;
+  font-size: 17px;
+}
