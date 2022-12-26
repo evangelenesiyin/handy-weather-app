@@ -25,21 +25,22 @@
 
 <div class="weather-app">
     
-    <div class="row justify-content-center">
-    <div class="col-6">
-      <div class="mb-3">
+    <div class="row">
+    <div class="col">
         <form id="city-form">
         <input type="text" class="form-control" id="search-city" placeholder="Search a city">
-        <input type="submit" value="">
+        <input type="submit" value=""></div>
+        <div class="col">
         <input type="button" id="current-temperature-button" title="Click to show current temperature" value="📍">
-      </form></div></div>
+      </form></div>
       </div>
 
       <div class="weather-statement">
         <span class="weather-description-statement" id="weather-description"></span> in
         <span class="weather-city-statement" id="weather-city-statement"></span>
         </div>
-    <div class="row justify-content-center">
+    
+        <div class="row justify-content-center">
         <div class="col-3">
             <span class="material-symbols-outlined" style="font-size:130px;vertical-align: right;">sunny</span>
         </div>
@@ -57,57 +58,58 @@
             </div>
             </div>
         </div>      
+
         <div class="row justify-content-center" style="margin:30px; font-size:17px;">
-          <div class="col-2">
+          <div class="col">
             Mon<br />
             <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
            <span class="weather-forecast-temperature">28°</span>
           </div>
-          <div class="col-2">
+          <div class="col">
             Tues<br />
             <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">sunny</span>
            <span class="weather-forecast-temperature">31°</span>
           </div>
-          <div class="col-2">
+          <div class="col">
             Wed<br />
             <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">sunny</span>
             <span class="weather-forecast-temperature">29°</span>
           </div>
-          <div class="col-2">
+          <div class="col">
             Thurs<br />
              <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
            <span class="weather-forecast-temperature">31°</span>
             </div>
-</div>
-            <div class="row justify-content-center" style="margin:-20px; font-size:17px;">
-          <div class="col-2">
-            Fri<br />
-            <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">sunny</span>
-           <span class="weather-forecast-temperature">31°</span>
-          </div>
-          <div class="col-2">
-            Sat<br />
-            <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
-           <span class="weather-forecast-temperature">27°</span>
-          </div>
-          <div class="col-2">
-            Sun<br />
-            <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
-           <span class="weather-forecast-temperature">27°</span>
-          </div>
-        </div> 
-        <div class="row justify-content-center" style="margin:40px 0 -40px 0; text-align: right;">
+            <div class="col">
+              Fri<br />
+              <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">sunny</span>
+             <span class="weather-forecast-temperature">31°</span>
+            </div>
+            <div class="col">
+              Sat<br />
+              <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
+             <span class="weather-forecast-temperature">27°</span>
+            </div>
+            <div class="col">
+              Sun<br />
+              <span class="material-symbols-outlined" style="display:block;margin:10px;font-size:50px;">rainy</span>
+             <span class="weather-forecast-temperature">27°</span>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" style="margin:10px 0 -20px; text-align: right;">
            <div class="col-6">
-            <a href="#" id="celsius">°C</a>
+            <a class="celsius" href="#">°C</a>
             </div>
             <div class="col-6" style="text-align:left;border-left: 1px solid #939AA9; color: #939AA9;">
-            <a href="#" id="fahrenheit">°F</a>
+            <a class="fahrenheit" href="#">°F</a>
             </div>
           </div>
+      </div>
+    </div>
+ <div class="footer">
+<u><a class="footer-link" href="https://github.com/evangelenesiyin/handy-weather-app" target=”_blank”>Open-sourced code</a></u> by Evangelene 🍵
  </div>
- <div class="col-12" style="margin:70px 0 -30px 0;font-size:10px;">
-<a href="https://github.com/evangelenesiyin/handy-weather-app" target=”_blank”>GitHub</a>
-</div>
  
     <script src="https://kit.fontawesome.com/6fe748c781.js" crossorigin="anonymous"></script>
     <script src="src/javascript/index.js"></script>
