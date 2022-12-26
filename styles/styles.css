@@ -10,31 +10,48 @@ body {
     rgba(231, 253, 255, 1) 67%
   );
 }
+input[type=submit] {
+  background-color: transparent;
+  border: 0px;
+  margin: -10;
+}
+input[type=button] {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 0px;
+  margin: 25px 0 0 -10px;
+  font-size:20px;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+input[type=button]:hover {
+border: 1px;
+background-color: #000;
+}
 .today {
   display: inline-block;
   font-size: 14px;
   color: #fff;
   text-align: right;
   margin: 0 0 0 300px;
-
 }
 .weather-app-header {
-  margin: 50px 550px 0;
+  margin: 0 -30px 20px -30px;
   border: 1px solid black;
   background-color: black;
   border-radius: 7px 7px 0 0;
   font-size: 12px;
-  padding: 6px;
+  padding: 0 0 5px 0;
   text-align: left;
 }
 .fa-circle {
   color: #939aa9;
-  padding: 1px 2px;
+  padding: 10px 0 1px 5px;
 }
 .weather-app {
-  display: block;
-  margin: 0 550px;
-  padding: 50px 50px 50px 50px;
+  max-width: 800px;
+  margin: 50px 550px 10px;
+  padding: 0 30px 20px 30px;
   border: 1px solid #ececec;
   background-color: white;
   border-radius: 0 0 7px 7px;
@@ -44,30 +61,11 @@ body {
   color: black;
 }
 .form-control {
-  margin: 0 0 0 180px;
+  margin: 20px 0 0 180px;
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #b6bbc5;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-input[type=submit] {
-  background-color: transparent;
-  border-radius: 20px;
-  border: 0px;
-  margin: -10;
-}
-input[type=button] {
-  background-color: transparent;
-  border-radius: 20px;
-  border: 0px;
-  margin: 5px 0 0 20px;
-  font-size:20px;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-input[type=button]:hover {
-border: 1px;
-background-color: #000;
 }
 .weather-statement {
   margin: 0 0 30px;
@@ -106,6 +104,7 @@ background-color: #000;
   text-decoration: none;
   font-size: 12px;
   color: #939AA9;
+  text-align: center;
 }
 .footer-link, .footer-link:visited {
   margin:10px 0;
@@ -114,6 +113,7 @@ background-color: #000;
   color: #939AA9;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
+  text-align: center;
 }
 .footer-link:hover {
   border: 1px;
