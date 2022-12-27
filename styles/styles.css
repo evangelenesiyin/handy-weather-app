@@ -61,8 +61,8 @@ background-color: #000;
   color: black;
 }
 .weather-icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 .form-control {
   margin: 20px 0 0 180px;
@@ -98,10 +98,10 @@ background-color: #000;
   font-weight: bold;
   color: #5a6275;
 }
-.celsiusFahrenheit {
-  text-decoration: none;
+.celsiusFahrenheit, .celsiusFahrenheit:hover {
   color: #939AA9;
   font-size: 17px;
+  text-decoration: none;
   cursor: default;
 }
 .active {
