@@ -30,10 +30,10 @@ background-color: #000;
 }
 .today {
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   color: #fff;
   text-align: right;
-  margin: 0 0 0 300px;
+  margin: 0 0 0 250px;
 }
 .weather-app-header {
   margin: 0 -30px 20px -30px;
@@ -59,6 +59,10 @@ background-color: #000;
 }
 .material-symbols-outlined {
   color: black;
+}
+.weather-icon {
+  width: 100px;
+  height: 100px;
 }
 .form-control {
   margin: 20px 0 0 180px;

@@ -16,7 +16,7 @@ let days = [
 ];
 let day = days[now.getDay()];
 let dayTime = day + ", " + hour + ":" + minute;
-document.querySelector("#todayDayTime").innerHTML = dayTime;
+document.querySelector("#todayDayTime").innerHTML = `Last updated: ${dayTime}`;
 
 // 
 
@@ -26,6 +26,7 @@ function showAllRecords(response) {
     document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
+    document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(city) {
