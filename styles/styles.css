@@ -98,20 +98,26 @@ background-color: #000;
   font-weight: bold;
   color: #5a6275;
 }
-.celsius, .celsius:hover, .fahrenheit, .fahrenheit:hover {
+.celsiusFahrenheit {
   text-decoration: none;
   color: #939AA9;
   font-size: 17px;
+  cursor: default;
+}
+.active {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
 }
 .footer {
-  margin:10px 0;
+  margin: 10px 0;
   text-decoration: none;
   font-size: 12px;
   color: #939AA9;
   text-align: center;
 }
 .footer-link, .footer-link:visited {
-  margin:10px 0;
+  margin: 10px 0;
   text-decoration: none;
   font-size: 12px;
   color: #939AA9;

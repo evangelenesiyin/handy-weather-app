@@ -21,8 +21,9 @@ document.querySelector("#todayDayTime").innerHTML = `Last updated: ${dayTime}`;
 // 
 
 function showAllRecords(response) {
+    celsiusTemperature = Math.round(response.data.main.temp);
     document.querySelector("#weather-city-statement").innerHTML = response.data.name;
-    document.querySelector("#main-degree").innerHTML = `${Math.round(response.data.main.temp)}°`;
+    document.querySelector("#main-degree").innerHTML = `${celsiusTemperature}°`;
     document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
@@ -56,6 +57,31 @@ function showNow(event) {
     navigator.geolocation.getCurrentPosition(showCurrentNow);
 }
 
+function convertFahrenheit(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#main-degree");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemperature = Math.round((celsiusTemperature * 9 / 5) + 32);
+    temperatureElement.innerHTML = `${fahrenheitTemperature}°`;
+}
+
+function convertCelsius(event) {
+    event.preventDefault();
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+    let temperatureElement = document.querySelector("#main-degree");
+    temperatureElement.innerHTML = `${celsiusTemperature}°`;
+    }
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertCelsius);
+
 let currentTemperatureButton = document.querySelector("#current-temperature-button");
 currentTemperatureButton.addEventListener("click", showNow);
 
@@ -63,22 +89,3 @@ let form = document.querySelector("#city-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Hokkaido");
-
-
-
-// CONVERTING CELSIUS TO FAHRENHEIT //
-
-function convertCelsius() {
-let mainDegree = document.querySelector("#main-degree");
-mainDegree.innerHTML = "-";
-}
-
-function convertFahrenheit() {
-let mainDegree = document.querySelector("#main-degree");
-mainDegree.innerHTML = "-";
-}
-    let celsiusLink = document.querySelector("#celsius");
-    celsiusLink.addEventListener("click", convertCelsius);
-
-    let fahrenheitLink = document.querySelector("#fahrenheit");
-    fahrenheitLink.addEventListener("click", convertFahrenheit);
