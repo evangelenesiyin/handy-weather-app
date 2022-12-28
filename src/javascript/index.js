@@ -20,6 +20,29 @@ document.querySelector("#todayDayTime").innerHTML = `Last updated: ${dayTime}`;
 
 // 
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#weather-forecast");
+    let forecastHTML = `<div class = "row">`;
+    let forecastDays = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+    forecastDays.forEach(function (day) {
+    forecastHTML = forecastHTML + 
+    `<div class="col" style="width:70px;">${day}<br />
+    <img src="http://openweathermap.org/img/wn/04d@2x.png" style="height:60px;"/>
+    <div class="row">
+        <div class="col">
+            <span class="weather-forecast-max">28°</span>
+        </div>
+        <div class="col">
+            <span class="weather-forecast-min">21°</span>
+        </div>
+            </div>
+    </div>
+    `;
+});
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function showAllRecords(response) {
     celsiusTemperature = Math.round(response.data.main.temp);
     document.querySelector("#weather-city-statement").innerHTML = response.data.name;
@@ -89,3 +112,5 @@ let form = document.querySelector("#city-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Hokkaido");
+
+displayForecast();

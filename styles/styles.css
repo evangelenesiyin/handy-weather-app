@@ -94,9 +94,16 @@ background-color: #000;
   font-size: 15px;
   color: #939aa9;
 }
-.weather-forecast-temperature {
+.weather-forecast {
+  font-size: 17px;
+}
+.weather-forecast-max {
   font-weight: bold;
   color: #5a6275;
+  margin-right: -17px;
+}
+.weather-forecast-min {
+  margin-left: -15px;
 }
 .celsiusFahrenheit, .celsiusFahrenheit:hover {
   color: #939AA9;
