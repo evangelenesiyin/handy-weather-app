@@ -74,11 +74,17 @@ background-color: #000;
 .weather-statement {
   margin: 0 0 30px;
 }
-.weather-description-statement,
-.weather-city-statement{
+.weather-city-statement {
   color: black;
   font-weight: 600;
   text-transform: capitalize;
+}
+.weather-description-statement {
+  color: black;
+  font-weight: 600;
+}
+.weather-description-statement:first-letter {
+  text-transform: uppercase;
 }
 .main-degree {
   color: black;

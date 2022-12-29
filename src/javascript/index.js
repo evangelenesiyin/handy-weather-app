@@ -20,27 +20,43 @@ document.querySelector("#todayDayTime").innerHTML = `Last updated: ${dayTime}`;
 
 // 
 
-function displayForecast() {
+function formatForecastDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+    
+    return days[day];
+}
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#weather-forecast");
     let forecastHTML = `<div class = "row">`;
-    let forecastDays = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-    forecastDays.forEach(function (day) {
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 7) {
     forecastHTML = forecastHTML + 
-    `<div class="col" style="width:70px;">${day}<br />
-    <img src="http://openweathermap.org/img/wn/04d@2x.png" style="height:60px;"/>
+    `<div class="col" style="width:70px;">${formatForecastDay(forecastDay.dt)}<br />
+    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" style="height:60px;"/>
     <div class="row">
         <div class="col">
-            <span class="weather-forecast-max">28°</span>
+            <span class="weather-forecast-max">${Math.round(forecastDay.temp.max)}°</span>
         </div>
         <div class="col">
-            <span class="weather-forecast-min">21°</span>
+            <span class="weather-forecast-min">${Math.round(forecastDay.temp.min)}°</span>
         </div>
             </div>
     </div>
     `;
+        }
 });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast (coordinate) {
+    let apiKey = "001bc651977f4b024af4d84282b0f02a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function showAllRecords(response) {
@@ -49,8 +65,10 @@ function showAllRecords(response) {
     document.querySelector("#main-degree").innerHTML = `${celsiusTemperature}°`;
     document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
+    document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
     document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+    getForecast(response.data.coord);
 }
 
 function search(city) {
