@@ -96,6 +96,7 @@ background-color: #000;
 }
 .weather-forecast {
   font-size: 17px;
+  margin: 20px 0 40px;
 }
 .weather-forecast-max {
   font-weight: bold;
@@ -105,13 +106,13 @@ background-color: #000;
 .weather-forecast-min {
   margin-left: -15px;
 }
-.celsiusFahrenheit, .celsiusFahrenheit:hover {
+.units, .units:hover {
   color: #939AA9;
   font-size: 17px;
   text-decoration: none;
   cursor: default;
 }
-.active {
+.active, .active:hover {
   color: #000;
   font-weight: 500;
   text-decoration: none;
