@@ -32,8 +32,8 @@ background-color: #000;
   display: inline-block;
   font-size: 13px;
   color: #fff;
-  text-align: right;
-  margin: 0 0 0 250px;
+  text-align: center;
+  margin: 0 0 0 200px;
 }
 .weather-app-header {
   margin: 0 -30px 20px -30px;
@@ -50,7 +50,7 @@ background-color: #000;
 }
 .weather-app {
   max-width: 800px;
-  margin: 50px 550px 10px;
+  margin: 100px auto 20px;
   padding: 0 30px 20px 30px;
   border: 1px solid #ececec;
   background-color: white;
@@ -65,7 +65,7 @@ background-color: #000;
   height: 120px;
 }
 .form-control {
-  margin: 20px 0 0 180px;
+  margin: 20px auto 0 180px;
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #b6bbc5;
