@@ -16,7 +16,7 @@ let days = [
 ];
 let day = days[now.getDay()];
 let dayTime = day + ", " + hour + ":" + minute;
-document.querySelector("#todayDayTime").innerHTML = `Last updated: ${dayTime}`;
+document.querySelector("#todayDayTime").innerHTML = `${dayTime}`;
 
 // 
 
