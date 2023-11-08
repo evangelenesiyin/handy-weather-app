@@ -19,8 +19,8 @@ input[type=button] {
   background-color: transparent;
   border-radius: 20px;
   border: 0px;
-  margin: 25px 0 0 -10px;
-  font-size:20px;
+  margin: 25px auto;
+  font-size: 20px;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
@@ -29,10 +29,10 @@ border: 1px;
 background-color: #000;
 }
 .today {
-  display: inline-block;
+  float: right;
   font-size: 13px;
   color: #fff;
-  margin: auto;
+  margin: 5px 10px 5px 0;
 }
 .weather-app-header {
   margin: 0 -30px 20px -30px;
@@ -64,7 +64,9 @@ background-color: #000;
   height: 120px;
 }
 .form-control {
-  margin: 20px auto 0 180px;
+  display: inline-block;
+  margin: 20px auto;
+  width: 50%;
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #b6bbc5;
