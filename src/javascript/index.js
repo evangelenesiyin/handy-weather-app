@@ -70,7 +70,10 @@ function displayForecast(response, isCelsius) {
 function getForecast(coordinate) {
   let apiKey = "001bc651977f4b024af4d84282b0f02a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(function (response) {
+    lastForecastResponse = response;
+    displayForecast(lastForecastResponse, true);
+  });
 }
 
 function showAllRecords(response) {
@@ -158,4 +161,4 @@ form.addEventListener("submit", handleSubmit);
 
 search("Hokkaido");
 
-displayForecast();
+displayForecast(lastForecastResponse, true);
