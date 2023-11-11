@@ -1,9 +1,9 @@
-// SHOWING CURRENT DAY AND TIME //
-
-let now = new Date();
-let hour = now.getHours();
+let today = new Date();
+let dayNum = today.getDate();
+let monthIndex = today.getMonth();
+let hour = today.getHours();
 hour = ("0" + hour).slice(-2);
-let minute = now.getMinutes();
+let minute = today.getMinutes();
 minute = ("0" + minute).slice(-2);
 let days = [
   "Sunday",
@@ -14,11 +14,24 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let day = days[now.getDay()];
-let dayTime = day + ", " + hour + ":" + minute;
-document.querySelector("#todayDayTime").innerHTML = `${dayTime}`;
-
-//
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let month = months[monthIndex];
+let day = days[today.getDay()];
+let fullDate = day + " " + dayNum + " " + month + ", " + hour + ":" + minute;
+document.querySelector("#todayDayTime").innerHTML = `${fullDate}`;
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -141,6 +154,48 @@ function convertCelsius(event) {
   let temperatureElement = document.querySelector("#main-degree");
   temperatureElement.innerHTML = `${celsiusTemperature}°`;
   displayForecast(lastForecastResponse, true);
+}
+
+const draggable = document.getElementById("weather-app");
+
+let posX = 0,
+  posY = 0,
+  mouseX = 0,
+  mouseY = 0;
+
+draggable.addEventListener("mousedown", mouseDown, false);
+window.addEventListener("mouseup", mouseUp, false);
+
+function mouseDown(e) {
+  if (e.target.tagName.toLowerCase() === "input") {
+    return;
+  }
+
+  e.preventDefault();
+  posX = e.clientX - draggable.offsetLeft;
+  posY = e.clientY - draggable.offsetTop;
+  window.addEventListener("mousemove", moveElement, false);
+}
+
+function mouseUp() {
+  window.removeEventListener("mousemove", moveElement, false);
+}
+
+function moveElement(e) {
+  mouseX = e.clientX - posX;
+  mouseY = e.clientY - posY;
+
+  mouseX = Math.max(
+    0,
+    Math.min(mouseX, window.innerWidth - draggable.offsetWidth)
+  );
+  mouseY = Math.max(
+    0,
+    Math.min(mouseY, window.innerHeight - draggable.offsetHeight)
+  );
+
+  draggable.style.left = mouseX + "px";
+  draggable.style.top = mouseY + "px";
 }
 
 let celsiusTemperature = null;

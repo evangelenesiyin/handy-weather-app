@@ -1,5 +1,7 @@
 body {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 25px;
   color: #939aa9;
@@ -13,7 +15,13 @@ body {
 input[type=submit] {
   background-color: transparent;
   border: 0px;
-  margin: -10;
+  margin: -10px;
+}
+input[type=submit]:focus {
+  outline: gray;
+}
+input[type=submit]:active {
+  outline: gray;
 }
 input[type=button] {
   background-color: transparent;
@@ -32,7 +40,7 @@ background-color: #000;
   float: right;
   font-size: 13px;
   color: #fff;
-  margin: 5px 10px 5px 0;
+  margin: 5px 15px 5px 0;
 }
 .weather-app-header {
   margin: 0 -30px 20px -30px;
@@ -42,19 +50,25 @@ background-color: #000;
   font-size: 12px;
   padding: 0 0 5px 0;
   text-align: left;
+  cursor: grab;
 }
 .fa-circle {
   color: #939aa9;
   padding: 10px 0 2px 5px;
 }
 .weather-app {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 800px;
-  margin: 50px auto 20px;
+  margin: 0 auto;
   padding: 0 30px 20px 30px;
   border: 1px solid #ececec;
   background-color: white;
   border-radius: 7px;
   color: #939aa9;
+  z-index: 1;
 }
 .material-symbols-outlined {
   color: black;
@@ -71,6 +85,7 @@ background-color: #000;
   border-radius: 20px;
   border: 1px solid #b6bbc5;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 .weather-statement {
   margin: 0 0 30px;
@@ -118,7 +133,7 @@ p::first-letter {
   color: #939AA9;
   font-size: 17px;
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
 }
 .active, .active:hover {
   color: #000;
@@ -126,7 +141,7 @@ p::first-letter {
   text-decoration: none;
 }
 .footer {
-  margin: 10px 0;
+  margin-top: 20px;
   text-decoration: none;
   font-size: 12px;
   color: #939AA9;
@@ -143,8 +158,8 @@ p::first-letter {
 }
 .footer-link:hover {
   border: 1px;
-  border-radius: 20px;
-  padding: 3px;
+  border-radius: 5px;
+  padding: 3px 5px;
   background-color: #000;
   color: #fff;
 }
