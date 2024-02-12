@@ -119,8 +119,10 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-city").value;
+  let cityInput = document.querySelector("#search-city");
+  let city = cityInput.value;
   search(city);
+  cityInput.value = "";
 }
 
 function showCurrentNow(position) {
