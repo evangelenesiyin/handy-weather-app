@@ -20,3 +20,6 @@ The weather dashboard is my one of my first projects ever since I embarked on th
 <img width="1183" alt="Screenshot 2023-11-11 at 4 29 06 PM" src="https://github.com/evangelenesiyin/handy-weather-app/assets/108106809/14a177d3-8e2e-4989-b384-a0eb271732ad">
 
 ## 📹 Demo Video
+
+https://github.com/evangelenesiyin/handy-weather-app/assets/108106809/27666788-08c1-4288-b989-23d11f3a9531
+
